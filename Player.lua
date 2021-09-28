@@ -1,6 +1,6 @@
-local LocalPlayer = game.Players.LocalPlayer.Character
-
 local Player = {}
+
+local LocalPlayer = game.Players.LocalPlayer.Character
 
 do 
     function Player.__index(t, i)
