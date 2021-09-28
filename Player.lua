@@ -23,6 +23,10 @@ do
         end
         player.CharacterAdded:Connect(CharacterAdded)
 
+        if player.Character then
+            player.Character.PrimaryPart:GetPropertyChangedSignal("Position"):Connect(PositionChanged)
+        end
+
         return setmetatable(TempPlayer, Player)
     end
 end
