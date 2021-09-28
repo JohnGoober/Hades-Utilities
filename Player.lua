@@ -112,23 +112,21 @@ do
     end
 
     function Player:UpdateEsp()
-        if self.Instance and self.Character then
+        if self.Character then
             local PrimaryPart = self.Character.PrimaryPart
             local Head = self.Character:WaitForChild("Head")
 
             local PrimaryPartPosition, PrimaryPartVisible = Camera:WorldToScreenPoint(PrimaryPart.Position)
             local OriginPosition, OriginVisible = Camera:WorldToScreenPoint(PrimaryPart.Position - OriginOffset)
-            
-            self.UI.Esp.Visible = PrimaryPartVisible and OriginVisible
 
             if self.UI.Esp.Visible then
                 local HeadPosition, HeadVisible = Camera:WorldToScreenPoint(Head.Position)
                 local HeadOriginDelta = (OriginPosition.Y - HeadPosition.Y) * 1.5
                 local HeadEspDifference = Vector2.new(HeadPosition.X, HeadPosition.Y) - self.UI.Esp.AbsolutePosition
 
-                self.UI.Esp.Position = UDim2.fromOffset(PrimaryPartPosition.X, PrimaryPartPosition.Y + 36)
+                self.UI.Esp.Position = UDim2.fromOffset(PrimaryPartPosition.X, PrimaryPartPosition.Y)
                 self.UI.Esp.Size = UDim2.fromOffset(HeadOriginDelta / 2, HeadOriginDelta)
-                self.UI.Dot.Head.Position = UDim2.fromOffset(HeadEspDifference.X, HeadEspDifference.Y + 36)
+                self.UI.Dot.Head.Position = UDim2.fromOffset(HeadEspDifference.X, HeadEspDifference.Y)
             end
         end
     end
