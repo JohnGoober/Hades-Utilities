@@ -126,9 +126,9 @@ do
                 local HeadOriginDelta = (OriginPosition.Y - HeadPosition.Y) * 1.5
                 local HeadEspDifference = Vector2.new(HeadPosition.X, HeadPosition.Y) - self.UI.Esp.AbsolutePosition
 
-                self.UI.Esp.Position = UDim2.fromOffset(PrimaryPartPosition.X, PrimaryPartPosition.Y)
+                self.UI.Esp.Position = UDim2.fromOffset(PrimaryPartPosition.X, PrimaryPartPosition.Y + 36)
                 self.UI.Esp.Size = UDim2.fromOffset(HeadOriginDelta / 2, HeadOriginDelta)
-                self.UI.Dot.Head.Position = UDim2.fromOffset(HeadEspDifference.X, HeadEspDifference.Y)
+                self.UI.Dot.Head.Position = UDim2.fromOffset(HeadEspDifference.X, HeadEspDifference.Y + 36)
             end
         end
     end
