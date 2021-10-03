@@ -2,7 +2,7 @@ local Object = {}
 
 do 
     function Object.Create(objectType, instance)
-        return setmetatable({ Type = objectType, Name = instance.Name, Instances = { Primary = instance } }, Object)
+        return setmetatable({ Type = objectType, Instances = { Primary = instance } }, Object)
     end
 
     function Object.__index(t, i)
